@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+
+  height: 100%;
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  text-decoration: none;
+  font-size: clamp(1.2rem, 2vw, 3rem);
+  color: black;
+  border: solid 2px black;
+  padding: 0 0.5vw;
+}
+.profilContainer {
+  padding: 5vh 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+  border: solid 5px;
+  border-top: 0px;
+}
+
+.leftProfilInfoContainer {
+  width: 20%;
+  min-width: 150px;
+  height: 90%;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.postsContainer {
+  padding: 3em 0;
+  width: min-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 30%));
+  grid-auto-rows: max-content;
+  grid-gap: 46px;
+}
+.titleMyPosts {
+  font-size: 50px;
+  margin: 20px 0px;
+}
+.inputLink {
+  margin-top: 15vh;
+  text-decoration: none;
+  font-size: clamp(1rem, 2vw, 3rem);
+  min-width: 10vw;
+  text-align: center;
+  color: black;
+  padding: 0.5vw;
+  border: solid 2px black;
+  background-color: #f7c74d;
+}
+
+.inputLink:hover {
+  color: rgb(255, 0, 0);
+}
+.email {
+  font-size: clamp(1rem, 2vw, 3rem);
+}
+
+.name {
+  font-size: clamp(1rem, 2.5vw, 3rem);
+}
+.logout {
+  width: 50%;
+  font-size: clamp(0.7rem, 1.5vw, 3rem);
+}
+
+.imgContainer {
+  height: 100%;
+  min-width: 10vw;
+  min-height: 10vw;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5vw;
+}
+.imgUploadLink {
+  font-size: clamp(1rem, 1vw, 3rem);
+  text-decoration: none;
+}
+.profilImg {
+  width: 7.5vw;
+  min-width: 60px;
+  height: 7.5vw;
+  min-height: 60px;
+  border-radius: 50%;
+}
+
+.deleteButton {
+  color: red;
+  font-size: clamp(1rem, 2vw, 2rem);
+  text-align: end;
+}
+.deletePostButtonShow {
+  position: absolute;
+  right: 10vw;
+  margin-top: 15vh;
+  text-decoration: none;
+  font-size: clamp(1rem, 2vw, 3rem);
+  min-width: 10vw;
+  text-align: center;
+  color: black;
+  padding: 0.5vw;
+  border: solid 2px black;
+  background-color: #f7c74d;
+}
+.deletePostButtonShow:hover {
+  color: rgb(255, 0, 0);
+}
