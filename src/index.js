@@ -6,8 +6,8 @@ import { ProfilPostsContextProvider } from "./contexts/profilPostsContext";
 import { PostContextProvider } from "./contexts/postContext";
 import { SinglePostProvider } from "./contexts/singlePostContext";
 import { CommentContextProvider } from "./contexts/commentContext";
-import { disbleReactDevTools } from "@fvilers/disable-react-devtools";
-if (process.env.NODE_ENV === "production") disbleReactDevTools();
+//import { disbleReactDevTools } from "@fvilers/disable-react-devtools";
+//if (process.env.NODE_ENV === "production") disbleReactDevTools();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
