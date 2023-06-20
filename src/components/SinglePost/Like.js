@@ -3,17 +3,21 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { usePostContext } from "../../hooks/usePostContext";
 import useSinglePostContext from "../../hooks/useSinglePostContext";
 import SinglePostCss from "../../styles/singlePostStil.module.css";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Like() {
   const { state } = useAuthContext();
   const { singlePost } = useSinglePostContext();
   const { dispatch } = usePostContext();
+  const navigate = useNavigate();
 
   const [liked, setLiked] = useState(
-    singlePost.likes.includes(state.user.name)
+    !state ? singlePost.likes.includes(state.user.name) : false
   );
   const [likes, setLikes] = useState(singlePost.likes.length);
   async function hendleLike() {
+    console.log(!state);
+    if (!state) return;
     const res = await fetch(
       `https://schoolb.onrender.com/api/posts/like/${singlePost._id}`,
       {
@@ -37,7 +41,7 @@ export default function Like() {
       <button
         className={SinglePostCss.likeButton}
         style={{ backgroundColor: liked ? "red" : "gray" }}
-        onClick={() => hendleLike()}
+        onClick={() => (!state ? hendleLike() : navigate("/login"))}
       >
         Like
       </button>
