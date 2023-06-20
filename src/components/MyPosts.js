@@ -16,7 +16,7 @@ export default function MyPosts({ item }) {
     if (!state.user) {
       return;
     }
-    const res = await fetch("http://localhost:4000/api/posts/delete", {
+    const res = await fetch("https://schoolb.onrender.com/api/posts/delete", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

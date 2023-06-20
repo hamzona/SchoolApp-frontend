@@ -15,7 +15,7 @@ export default function Like() {
   const [likes, setLikes] = useState(singlePost.likes.length);
   async function hendleLike() {
     const res = await fetch(
-      `http://localhost:4000/api/posts/like/${singlePost._id}`,
+      `https://schoolb.onrender.com/api/posts/like/${singlePost._id}`,
       {
         method: "POST",
         headers: {

@@ -7,7 +7,7 @@ export function useLogin() {
   const { dispatch } = useAuthContext();
   const login = async (email, password) => {
     setError(null);
-    const res = await fetch("http://localhost:4000/api/users/login", {
+    const res = await fetch("https://schoolb.onrender.com/api/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

@@ -22,7 +22,7 @@ export function CommentContextProvider({ children }) {
     if (singlePost === null) return;
     async function getData() {
       setLoadingComments(true);
-      const res = await fetch(" http://localhost:4000/api/comments/all", {
+      const res = await fetch("https://schoolb.onrender.com/api/comments/all", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export function CommentContextProvider({ children }) {
           if (!comment.imgName) return comment;
 
           const img = await fetch(
-            `http://localhost:4000/api/img/getImgPublic/${comment.imgName}`
+            `https://schoolb.onrender.com/api/img/getImgPublic/${comment.imgName}`
           );
 
           const blob = await img.blob();
@@ -55,7 +55,7 @@ export function CommentContextProvider({ children }) {
           const images = await Promise.all(
             comment.commentImgsNames.map(async (imgName) => {
               const img = await fetch(
-                `http://localhost:4000/api/img/getImgPublic/${imgName}`
+                `https://schoolb.onrender.com/api/img/getImgPublic/${imgName}`
               );
 
               const blob = await img.blob();

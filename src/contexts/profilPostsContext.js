@@ -30,7 +30,7 @@ export function ProfilPostsContextProvider({ children }) {
         params.delete("user");
       }
       const res = await fetch(
-        `http://localhost:4000/api/posts/allMy?${params.toString()}`,
+        `https://schoolb.onrender.com/api/posts/allMy?${params.toString()}`,
         {
           method: "GET",
           headers: {
@@ -48,7 +48,7 @@ export function ProfilPostsContextProvider({ children }) {
             if (!post.imgName) return post;
 
             const img = await fetch(
-              `http://localhost:4000/api/img/getImgPublic/${post.imgName}`
+              `https://schoolb.onrender.com/api/img/getImgPublic/${post.imgName}`
             );
 
             const blob = await img.blob();
@@ -66,7 +66,7 @@ export function ProfilPostsContextProvider({ children }) {
             if (!post.postImgs || post.postImgs.length === 0) return post;
             let copyPost = post;
             const img = await fetch(
-              `http://localhost:4000/api/img/getImgPublic/${copyPost.postImgs[0]}`
+              `https://schoolb.onrender.com/api/img/getImgPublic/${copyPost.postImgs[0]}`
             );
             const blob = await img.blob();
             const imgURL = URL.createObjectURL(blob);

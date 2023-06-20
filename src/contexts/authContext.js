@@ -27,7 +27,7 @@ export function AuthContextProvider({ children }) {
         return;
       }
       const res = await fetch(
-        `http://localhost:4000/api/users/getUsr/${user.name}`
+        `https://schoolb.onrender.com/api/users/getUsr/${user.name}`
       );
       const json = await res.json();
 
@@ -45,7 +45,7 @@ export function AuthContextProvider({ children }) {
     }
     async function getImg() {
       const res = await fetch(
-        `http://localhost:4000/api/img/getImg/${state.user.imgName}`,
+        `https://schoolb.onrender.com/api/img/getImg/${state.user.imgName}`,
         {
           headers: {
             Authorization: `Berar ${state.user.token}`,

@@ -15,7 +15,7 @@ export default function UploadingImg({ img }) {
     formData.append("img", imageFile);
 
     const res = await fetch(
-      `http://localhost:4000/api/img/post/${state.user.imgName}`,
+      `https://schoolb.onrender.com/api/img/post/${state.user.imgName}`,
       {
         method: "POST",
         headers: {

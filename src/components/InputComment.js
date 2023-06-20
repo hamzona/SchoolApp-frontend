@@ -34,7 +34,7 @@ function InputComment() {
     }
     setLoadingComments(true);
 
-    const res = await fetch("http://localhost:4000/api/comments/add", {
+    const res = await fetch("https://schoolb.onrender.com/api/comments/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ function InputComment() {
         formData.append("imgs", image);
       });
       const resWithImgs = await fetch(
-        `http://localhost:4000/api/img/postMultipleCommentImgs/${json._id}`,
+        `https://schoolb.onrender.com/api/img/postMultipleCommentImgs/${json._id}`,
         {
           method: "POST",
           headers: {
@@ -73,7 +73,7 @@ function InputComment() {
     if (!jsonWithImgs.imgName) return jsonWithImgs;
 
     const img = await fetch(
-      `http://localhost:4000/api/img/getImgPublic/${jsonWithImgs.imgName}`
+      `https://schoolb.onrender.com/api/img/getImgPublic/${jsonWithImgs.imgName}`
     );
 
     const blob = await img.blob();
@@ -88,7 +88,7 @@ function InputComment() {
       const images = await Promise.all(
         jsonWithImgs.commentImgsNames.map(async (imgName) => {
           const img = await fetch(
-            `http://localhost:4000/api/img/getImgPublic/${imgName}`
+            `https://schoolb.onrender.com/api/img/getImgPublic/${imgName}`
           );
 
           const blob = await img.blob();

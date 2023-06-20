@@ -12,7 +12,7 @@ export function useFetchSinglePost() {
         let images = await Promise.all(
           copy.postImgs.map(async (postImg) => {
             const img = await fetch(
-              `http://localhost:4000/api/img/getImgPublic/${postImg}`
+              `https://schoolb.onrender.com/api/img/getImgPublic/${postImg}`
             );
 
             const blob = await img.blob();
@@ -29,7 +29,7 @@ export function useFetchSinglePost() {
       } else {
         //fetching profil img
         const res = await fetch(
-          `http://localhost:4000/api/img/getImgPublic/${item.imgName}`
+          `https://schoolb.onrender.com/api/img/getImgPublic/${item.imgName}`
         );
         const blob = await res.blob();
         const imgURL = URL.createObjectURL(blob);

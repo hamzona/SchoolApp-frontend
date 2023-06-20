@@ -11,7 +11,7 @@ export default function DeleteButton({ ID, setIsShowDeleteButton, imgNames }) {
   const { dispatch: setProfilPosts } = useProfilPostsContext();
   const { comments } = useCommentContext();
   async function hendleClick() {
-    const res = await fetch("http://localhost:4000/api/posts/delete", {
+    const res = await fetch("https://schoolb.onrender.com/api/posts/delete", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +26,7 @@ export default function DeleteButton({ ID, setIsShowDeleteButton, imgNames }) {
     const resImg = await Promise.all(
       imgNames.map(async (name) => {
         const res = await fetch(
-          `http://localhost:4000/api/img/deleteImg/${name}`
+          `https://schoolb.onrender.com/api/img/deleteImg/${name}`
         );
         const js = await res.json();
         return js;
@@ -34,7 +34,7 @@ export default function DeleteButton({ ID, setIsShowDeleteButton, imgNames }) {
     );
     /*GET IMG FROM COMMENTS */
     const resImgNames = await fetch(
-      `http://localhost:4000/api/comments/getAllCommentImgNamesFromPost/${ID}`
+      `https://schoolb.onrender.com/api/comments/getAllCommentImgNamesFromPost/${ID}`
     );
     /*DELETE IMG FROM COMMENTS */
     //console.log(resImgNames);
@@ -43,7 +43,7 @@ export default function DeleteButton({ ID, setIsShowDeleteButton, imgNames }) {
     const resResImgNames = await Promise.all(
       jsonImgNames.map(async (imgName, index) => {
         const res = await fetch(
-          `http://localhost:4000/api/img/deleteImg/${imgName}`
+          `https://schoolb.onrender.com/api/img/deleteImg/${imgName}`
         );
         // return res;
         const js = await res.json();
@@ -53,7 +53,7 @@ export default function DeleteButton({ ID, setIsShowDeleteButton, imgNames }) {
 
     /*DELETE COMMENTS */
     const resComment = await fetch(
-      `http://localhost:4000/api/comments/deleteAllCommentsFromPost/${ID}`,
+      `https://schoolb.onrender.com/api/comments/deleteAllCommentsFromPost/${ID}`,
       { "Content-Type": "application/json" }
     );
     const jsonA = await resComment.json();

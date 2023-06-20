@@ -35,7 +35,7 @@ export default function Input() {
       return;
     }
 
-    const res = await fetch("http://localhost:4000/api/posts/add", {
+    const res = await fetch("https://schoolb.onrender.com/api/posts/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export default function Input() {
       });
 
       const resWithImgs = await fetch(
-        `http://localhost:4000/api/img/postMultiple/${json._id}`,
+        `https://schoolb.onrender.com/api/img/postMultiple/${json._id}`,
         {
           method: "POST",
           headers: {
@@ -77,7 +77,7 @@ export default function Input() {
 
     if (res.ok) {
       const img = await fetch(
-        `http://localhost:4000/api/img/getImgPublic/${state.user.imgName}`
+        `https://schoolb.onrender.com/api/img/getImgPublic/${state.user.imgName}`
       );
 
       const blob = await img.blob();
