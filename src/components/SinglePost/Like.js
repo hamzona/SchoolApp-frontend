@@ -41,7 +41,7 @@ export default function Like() {
       <button
         className={SinglePostCss.likeButton}
         style={{ backgroundColor: liked ? "red" : "gray" }}
-        onClick={() => (!state ? hendleLike() : navigate("/login"))}
+        onClick={() => (!state ? navigate("/login") : hendleLike())}
       >
         Like
       </button>
