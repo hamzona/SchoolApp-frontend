@@ -6,7 +6,7 @@ export function useSingup() {
   const { dispatch } = useAuthContext();
   const singup = async (email, password, name) => {
     setError(null);
-    const res = await fetch(" api/users/singup", {
+    const res = await fetch("https://schoolb.onrender.com/api/users/singup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password, name }),
