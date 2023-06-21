@@ -15,7 +15,7 @@ function App() {
   const { state } = useAuthContext();
   const { singlePost, loadingPost } = useSinglePostContext();
   const { state: profil } = useProfilPostsContext();
-  //  console.log(!profil ? null : profil[0].imgURL);
+  //  console.log(!profil ? null : profil.length === 0 ? null : profil[0].imgURL);
   return (
     <BrowserRouter>
       <Routes>
@@ -55,7 +55,13 @@ function App() {
         />
         <Route
           path="/imgUpload"
-          element={<UploadingImg img={!profil ? null : profil[0].imgURL} />}
+          element={
+            <UploadingImg
+              img={
+                !profil ? null : profil.length === 0 ? null : profil[0].imgURL
+              }
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

@@ -3,7 +3,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { usePostContext } from "../../hooks/usePostContext";
 import useSinglePostContext from "../../hooks/useSinglePostContext";
 import SinglePostCss from "../../styles/singlePostStil.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Like() {
   const { state } = useAuthContext();
